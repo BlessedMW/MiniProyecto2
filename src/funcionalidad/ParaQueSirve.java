@@ -10,11 +10,15 @@ Licencia: GNU-GPL.
 package funcionalidad;
 
 import java.awt.*;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.io.*;
 import javax.swing.*;
 import javax.swing.ImageIcon;
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class ParaQueSirve extends JFrame {
     //Declaracion
@@ -59,8 +63,8 @@ public class ParaQueSirve extends JFrame {
         btnSalir.setBounds(590,5,70,20);
         btnSalir.setForeground(Color.black);
         btnSalir.setFont(new Font("arial",3,10));
+        btnSalir.addMouseListener(new ManejadorDeEventos());
         lblFondo.add(btnSalir);
-
     }
     private void lblParaQSirve(){
         //Label - Para Que Sirve
@@ -97,12 +101,27 @@ public class ParaQueSirve extends JFrame {
             setContentAreaFilled(false);
         }
     }
+    
+    private class ManejadorDeEventos extends MouseAdapter {
 
-    
-    
-    
-    
+        @Override
+        public void mousePressed(MouseEvent e) {
+            if (e.getSource() == btnSalir) {
+                dispose();
+                try {
+                    Menu mn = new Menu(0);
+                    mn.setVisible(true);
+                } catch (IOException ex) {
+                    Logger.getLogger(ParaQueSirve.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            } 
+        } 
+    }
+
 }
+    
+    
+
 
 
 
