@@ -22,8 +22,8 @@ import javax.sound.sampled.Clip;
 
 public class Menu extends JFrame {
     //Declaracion
-    private int anchoV = 700;
-    private int largoV = 500;
+    private int anchoV = 1068;
+    private int largoV = 700;
     private ImageIcon imgFondo;
     private JLabel lblFondo;
     private JButton btnJugar;
@@ -77,14 +77,14 @@ public class Menu extends JFrame {
     
     public void BotonJuega(){
         btnJugar = new BotonSinFondo();
-        btnJugar.setBounds(220, 280, 250, 150);
+        btnJugar.setBounds(350, 500, 250, 150);
         lblFondo.add(btnJugar);
         btnJugar.addMouseListener(new ManejadorDeEventos());
     }
     
     public void BotonComoJuega(){
         btnComoJugar = new BotonSinFondo();
-        btnComoJugar.setBounds(10, 280, 200, 130);
+        btnComoJugar.setBounds(0, 500, 500, 300);
         lblFondo.add(btnComoJugar);
         btnComoJugar.addMouseListener(new ManejadorDeEventos());
     
@@ -92,7 +92,7 @@ public class Menu extends JFrame {
     
     public void BotonParaQSirve(){
         btnParaQueSirve = new BotonSinFondo();
-        btnParaQueSirve.setBounds(470, 280, 200, 130);
+        btnParaQueSirve.setBounds(800, 500, 400, 300);
         lblFondo.add(btnParaQueSirve);
         btnParaQueSirve.addMouseListener(new ManejadorDeEventos());
     }
