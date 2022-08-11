@@ -9,9 +9,7 @@ Licencia: GNU-GPL.
 
 package funcionalidad;
 
-
 import javax.swing.Timer;
-
 import java.awt.*;
 import java.io.*;
 import javax.swing.*;
